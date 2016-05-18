@@ -46,9 +46,17 @@ int char_count(const char *str, char caractere){
 int main (){
 	char texto[lim];
 	char ch='A',cn='0',CH='A',CN='0';
-	int j,i,t;
+	int j,i,t,a;
 	char fim[1000000],local[lim];
-		
+	inicio:
+	printf("\t\tBem Vindo, ao Contador de caracteres\n\n\n\n");
+	printf("Digite a opcao que deseja efetuar:\n1-Contar caracteres \n2-Sair\n ");
+	scanf("%d",&a);
+	
+	if(a==2){
+		return 0;
+	}
+	if(a==1){
 	fgets(local,lim,stdin);
 	strcat(fim,local);
 	for(t=0;t<1000;t++){
@@ -93,5 +101,8 @@ int main (){
 	for(i=0;i<10;i++){
 		char_count(fim,CN);
 		CN++;	
+		}
 	}
+	
+	goto inicio;
 }
