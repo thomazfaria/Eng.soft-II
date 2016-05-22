@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <windows.h>
 #define lim 1000
 float TOTAL=0;
 char maiusculo (char texto[]){
@@ -34,10 +35,12 @@ int char_count(const char *str, char caractere){
 	
 		p=quant;
    	  	
-	//	pro=(p)/(TOTAL);
-		
-		printf(" (%d)",quant);
+		pro=(p)/(TOTAL);
+	printf(" (%d - %.2f)",quant,pro);
    	  printf("\n");
+		
+	//	printf(" (%d)",quant);
+   	  //printf("\n");
 
 
 		
@@ -48,8 +51,9 @@ int main (){
 	char ch='A',cn='0',CH='A',CN='0';
 	int j,i,t,a;
 	char fim[1000000],local[lim];
-	inicio:
 	printf("\t\tBem Vindo, ao Contador de caracteres\n\n\n\n");
+	inicio:
+
 	printf("Digite a opcao que deseja efetuar:\n1-Contar caracteres \n2-Sair\n ");
 	scanf("%d",&a);
 	
@@ -57,9 +61,11 @@ int main (){
 		return 0;
 	}
 	if(a==1){
-	fgets(local,lim,stdin);
-	strcat(fim,local);
-	for(t=0;t<1000;t++){
+		system("cls");
+		printf("\nDigite o paragrafo desejado,apos o termino tecle enter e digite ""FIM"" e tecle enter novamente.\n");
+		printf("\n nao digite acentos!!\n");
+		strcat(fim,local);
+		for(t=0;t<1000;t++){
 		
 		fgets(texto,lim,stdin);
 		
@@ -103,6 +109,8 @@ int main (){
 		CN++;	
 		}
 	}
-	
+
+	system("pause");
+	system("cls");
 	goto inicio;
 }
